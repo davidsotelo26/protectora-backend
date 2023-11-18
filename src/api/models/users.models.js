@@ -1,6 +1,5 @@
-const mongoose = require("mongoose");
+const mysql = require("mysql");
 
-const Schema = mongoose.Schema;
 
 
 const usersSchema = new Schema({
@@ -14,5 +13,5 @@ const usersSchema = new Schema({
 });
 //string, number, array, date, mixed, boolean,  ObjectId
 
-const Users = mongoose.model("users", usersSchema)
+const Users = mysql.model("users", usersSchema)
 module.exports = Users;

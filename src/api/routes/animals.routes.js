@@ -7,6 +7,6 @@ const { addAnimal, getAnimal, getAnimalById, putAnimal } = require("../controlle
 router.post("/", addAnimal)
 router.get("/", getAnimal)
 router.get("/:id", getAnimalById)
-router.put("/id:", putAnimal)
+router.put("/:id", putAnimal)
 
 module.exports = router;

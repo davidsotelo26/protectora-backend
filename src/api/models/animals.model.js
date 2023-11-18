@@ -1,6 +1,4 @@
-const mongoose = require("mongoose");
-
-const Schema = mongoose.Schema;
+const mysql = require("mysql");
 
 
 const animalsSchema = new Schema({
@@ -23,5 +21,5 @@ const animalsSchema = new Schema({
 });
 //string, number, array, date, mixed, boolean,  ObjectId
 
-const Animals = mongoose.model("animals", animalsSchema)
+const Animals = mysql.model("animals", animalsSchema)
 module.exports = Animals;

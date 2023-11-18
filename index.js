@@ -3,7 +3,7 @@ const routerAnimals = require("./src/api/routes/animals.routes");
 const routerUsers = require("./src/api/routes/users.routes")
 const routerEntities = require("./src/api/routes/entities.routes")
 
-
+app.use(express.json());
 
 
 app.use("/animals", routerAnimals);
