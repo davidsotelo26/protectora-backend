@@ -2,7 +2,7 @@ const User = require("../api/models/users.models")
 
 const validatePassword = (pass) => {
 
-    const regex = /[A-Za-z\d$@$!%*?&]{8,15}/; // 1 mayuscula, 1 minuscula,  minimo 8
+    const regex = /[A-Za-z]{8,15}/; // 1 mayuscula, 1 minuscula,  minimo 8, maximo 15
     return regex.test(pass)
 }
 

@@ -2,9 +2,10 @@ const mysql = require("mysql");
 
 
 const animalsSchema = new Schema({
+    id: {type: number, required: true},
     especies: {type: String, required: true},
-    birth_date: { type: String, required: true },
-    sex: { type: String, required: true },
+    birthDate: { type: String, required: true },
+    genre: { type: String, required: true },
     size: { type: String, required: true},
     weight: {type: String, required: true},
     personality: {type: String, required: true},
@@ -15,6 +16,9 @@ const animalsSchema = new Schema({
     sterilized: {type: String, required: true},
     identified: {type: String, required: true},
     microchip: {type: String, required: true},
+    adoptionRequirements: {type: String, required: true},
+    rate: {type: String, required: true},
+    sendOtherCity: {type: String, required: true},
 },
 {
     collection: "animals", timestamps: true
