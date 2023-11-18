@@ -13,9 +13,14 @@ const connection = mysql.createConnection({
 });
 
 connection.connect((error) => {
-    if (error) throw error; 
-        console.log('Conectado a la base de datos ');
-        return;
+    if (error) throw error;
+    console.log('Conectado a la base de datos ');
+    return;
+});
+
+connection.query('SELECT * FROM Protectora', (error, results) => {
+    if (error) throw error;
+    console.log(results);
 });
 
 app.get('/', (req, res) => {
