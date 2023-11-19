@@ -1,5 +1,4 @@
 const express = require('express');
-const connectDB = require('./src/utils/database');
 const app = express();
 const mysql = require('mysql');
 require('dotenv').config();
@@ -28,10 +27,6 @@ const connectDB = () => {
 
 app.get('/', (req, res) => {
     res.send('Hola mundo');
-});
-
-app.listen(3000, () => {
-    console.log('Servidor escuchando en puerto 3000');
 });
 
 module.exports = { connectDB };
