@@ -11,7 +11,7 @@ const app = express();
 app.use(express.json());
 
 
-// connectDB();
+connectDB();
 app.use("/animals", routerAnimals);
 app.use("/users", routerUsers);
 app.use("/adoptions", routerAdoptions);
@@ -21,7 +21,7 @@ app.use("/entities", routerEntities);
 const http = require('http');
 
 const PORT = 3000;
-const server = http.createServer();
+const server = http.createServer(app);
 
 // El servidor necesita dos argumentos, el puerto y un callback 
 // para cuando empiece a funcionar cuando usemos node.
