@@ -1,4 +1,4 @@
-const User = require("../api/models/users.models")
+const User = require("../api/models/users.model")
 
 const validatePassword = (pass) => {
 

@@ -1,20 +1,27 @@
-const firebase = require("firebase");
+const { verifyToken } = require("../utils/jwt");
+const User = require("../api/models/users.model");
 
-function iniciarSesion(email, password) {
-  return firebase.auth().signInWithEmailAndPassword(email, password);
-}
+const isAuth = async (req, res, next) => {
+  try {
+    const auth = req.headers.authorization;
+    if (!auth) {
+      return res.status(400).json({ message: "No autorizado" })
+    }
+    const token = auth.split(" ")[1];
+    const tokenVerified = verifyToken(token);
+    console.log(tokenVerified)
+    if (!tokenVerified.id) {
+      return res.status(400).json({ message: "No autorizado", message: tokenVerified });
+    }
+    const userProfile = await User.findById(tokenVerified.id)
+    req.userProfile = userProfile;
+    next();
 
-function registrarse(email, password) {
-  return firebase.auth().createUserWithEmailAndPassword(email, password);
-}
+  } catch (error) {
 
-function cerrarSesion() {
-  return firebase.auth().signOut();
-}
-
-module.exports = {
-    iniciarSesion,
-    registrarse,
-    cerrarSesion
+  }
 };
+
+
+module.exports = { isAuth };
 

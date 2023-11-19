@@ -12,7 +12,7 @@ const addAnimal = async (req, res) => {
     }
 };
 
-const getAnimals = async (req, res) => {
+const getAnimal = async (req, res) => {
     try {
         const animals = await Animals.find();
         return res.status(200).json(animals);
@@ -51,4 +51,4 @@ const deleteAnimal = async (req, res) => {
         return res.status(500).json({ message: "Error", data: error });
     }
 };
-module.exports = { addAnimal, getAnimals, getAnimalById, getAnimalByName, updateAnimal, deleteAnimal };
+module.exports = { addAnimal, getAnimal, getAnimalById, getAnimalByName, updateAnimal, deleteAnimal };
