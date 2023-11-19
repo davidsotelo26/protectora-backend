@@ -13,15 +13,20 @@ const connection = mysql.createConnection({
 });
 
 connection.connect((error) => {
-    if (error) throw error; 
-        console.log('Conectado a la base de datos ');
-        return;
+    if (error) throw error;
+    console.log('Conectado a la base de datos ');
+    return;
+});
+
+connection.query('SELECT * FROM Protectora', (error, results) => {
+    if (error) throw error;
+    console.log(results);
 });
 
 app.get('/', (req, res) => {
     res.send('Hola mundo');
 });
 
-app.listen(3000, () => {
-    console.log('Servidor escuchando en puerto 3000');
+app.listen(3001, () => {
+    console.log('Servidor escuchando en puerto 3001');
 });

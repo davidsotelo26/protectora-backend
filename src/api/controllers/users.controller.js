@@ -1,7 +1,7 @@
-const User = require('../models/user.model');
+const User = require('../models/users.model');
 const bcrypt = require('bcrypt');
-const { validateEmailDB, validatePassword } = require('../utils/validator');
-const { generateToken } = require('../utils/jwt');
+const { validateEmailDB, validatePassword } = require('../../utils/validator');
+const { generateToken } = require('../../utils/jwt');
 
 const registerUser = async (req, res) => {
     try {
@@ -39,6 +39,14 @@ const loginUser = async (req, res) => {
         
     }
 };
+
+const profile = async (req, res) => {
+    try {
+        return res.status(200).json(req.userProfile)
+    } catch (error) {
+
+    }
+}
 
 const getUsers = async (req, res) => {
     try {
@@ -85,4 +93,4 @@ const deleteUser = async (req, res) => {
     }
 };
 
-module.exports = { registerUser, loginUser, getUsers, getUserById, getUserByEmail, updateUser, deleteUser };
+module.exports = { registerUser, loginUser, getUsers, getUserById, getUserByEmail, updateUser, deleteUser, profile };

@@ -7,10 +7,11 @@ const routerAdoptions = require("./src/api/routes/adoptions.routes");
 const env = require('dotenv');
 env.config();
 
+const app = express();
 app.use(express.json());
 
 
-connectDB();
+// connectDB();
 app.use("/animals", routerAnimals);
 app.use("/users", routerUsers);
 app.use("/adoptions", routerAdoptions);
