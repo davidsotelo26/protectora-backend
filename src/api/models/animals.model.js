@@ -18,7 +18,7 @@ const animalsSchema = new Schema(
         vaccinated: { type: Boolean, required: true },
         dewormed: { type: Boolean, required: true },
         sterilized: { type: Boolean, required: true },
-        indentified: { type: Boolean, required: true },
+        identified: { type: Boolean, required: true },
         microchip: { type: Boolean, required: true },
         adoptionRequirements: { type: String, required: true },
         rate: { type: Number, required: true },
