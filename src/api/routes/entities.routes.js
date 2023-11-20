@@ -3,11 +3,11 @@ const { addEntitiy, getEntityById, getEntity, getEntityByName, updateEntity, del
 const router = express.Router();
 
 
-router.post("entity/register", addEntitiy);
-router.get("/entity", getEntity);
-router.get("/entity/:id", getEntityById);
-router.get("/entity/:name", getEntityByName);
-router.put("/entity/:id", updateEntity);
-router.delete("/entity/:id", deleteEntity);
+router.post("/register", addEntitiy);
+router.get("/", getEntity);
+router.get("/id/:id", getEntityById);
+router.get("/name/:name", getEntityByName);
+router.put("/:id", updateEntity);
+router.delete("/:id", deleteEntity);
 
 module.exports = router;

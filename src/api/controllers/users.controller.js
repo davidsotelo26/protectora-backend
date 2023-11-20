@@ -5,6 +5,7 @@ const { generateToken } = require('../../utils/jwt');
 
 const registerUser = async (req, res) => {
     try {
+        console.log("hola");
         const userBody = new User(req.body);
         const valEmail = await validateEmailDB(req.body.email);
         if (!valEmail) {
