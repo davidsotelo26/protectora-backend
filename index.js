@@ -1,30 +1,27 @@
 const express = require('express');
-const { connectDB } = require('./src/utils/database');
-const routerAnimals = require("./src/api/routes/animals.routes");
-const routerUsers = require("./src/api/routes/users.routes");
-const routerEntities = require("./src/api/routes/entities.routes");
-const routerAdoptions = require("./src/api/routes/adoptions.routes");
-const env = require('dotenv');
-env.config();
+const { connectDb } = require("./src/utils/database");
+const routerAnimal = require("./src/api/routes/animal.routes");
+const routerUser = require("./src/api/routes/user.routes")
+const cors = require("cors")
+const env = require("dotenv")
+env.config()
+
+
+
 
 const app = express();
+
 app.use(express.json());
+app.use(cors())
 
 
-connectDB();
-app.use("/animals", routerAnimals);
-app.use("/users", routerUsers);
-app.use("/adoptions", routerAdoptions);
-app.use("/entities", routerEntities);
 
 
-const http = require('http');
+connectDb();
 
-const PORT = 3300;
-const server = http.createServer(app);
 
-// El servidor necesita dos argumentos, el puerto y un callback 
-// para cuando empiece a funcionar cuando usemos node.
-server.listen(PORT, () => {
-  console.log(`Server started in http://localhost:${PORT}`);
+
+const PORT = 5050;
+app.listen(PORT, () => {
+  console.log('escuchando por el puerto ' + PORT);
 });

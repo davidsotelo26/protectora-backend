@@ -1,11 +1,8 @@
-const mysql = require("mysql");
 
-const connection = mysql.createConnection({
-    host: process.env.DBHOST,
-    user: process.env.DBUSER,
-    password: process.env.DBPASSWORD,
-    database: process.env.DATABASE,
-});
+const connectDB = require('./src/utils/database');
+
+connectDB();
+
 
 connection.connect((err) => {
     if (err) throw err;
