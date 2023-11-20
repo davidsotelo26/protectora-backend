@@ -4,11 +4,11 @@ const Schema = mongoose.Schema;
 
 
 const adoptionsSchema = new Schema({
-    adoptionId: { type: Number, required: true },
-    animalId: { type: Number, required: true },
+    adoptionId: { type: String, required: true },
+    animalId: { type: String, required: true },
     adoptionDate: { type: Date, required: true },
     status: { type: String, required: true },
-    otherAnimals: { type: String, required: true },
+    otherAnimals: { type: Boolean, required: true },
     animalSpecies: { type: String, required: true },
     animalGeralongwith: { type: String, required: true },
     adoptionReason: { type: String, required: true },

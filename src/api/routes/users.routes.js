@@ -3,14 +3,14 @@ const {getUsers, getUserById, getUserByEmail, updateUser, deleteUser, registerUs
 const { isAuth } = require("../../middleware/auth");
 const router = express.Router();
 
-router.post("/user/register", registerUser);
-router.post("/user/login", loginUser);
-router.get("/user/profile", [isAuth], profile); 
-router.get("/user/:id", getUserById);
-router.get("/user", getUsers);
-router.get("/user/:email", getUserByEmail);
-router.put("/user/:id", updateUser);
-router.delete("/user/:id", deleteUser);
+router.post("/register", registerUser);
+router.post("/login", loginUser);
+router.get("/profile", [isAuth], profile); 
+router.get("/:id", getUserById);
+router.get("/", getUsers);
+router.get("/email/:email", getUserByEmail);
+router.put("/:id", updateUser);
+router.delete("/:id", deleteUser);
 
 
 module.exports = router;
