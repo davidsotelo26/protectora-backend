@@ -4,9 +4,9 @@ const { addAdoption, getAdoption, getAdoptionById, getAdoptionByAnimalId, getAdo
 
 router.post("/", addAdoption);
 router.get("/", getAdoption);
-router.get("/:id", getAdoptionById);
-router.get("/animal/:animalId", getAdoptionByAnimalId);
-router.get("/user/:userId", getAdoptionByUserId);
+router.get("/id/:id", getAdoptionById);
+router.get("/:animalId", getAdoptionByAnimalId);
+router.get("/:userId", getAdoptionByUserId);
 router.put("/:id", updateAdoption);
 router.delete("/:id", deleteAdoption);
 
