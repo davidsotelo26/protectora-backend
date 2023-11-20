@@ -8,16 +8,18 @@ env.config()
 
 
 
+
 const app = express();
 
 app.use(express.json());
 app.use(cors())
 
 
+
+
 connectDb();
 
-app.use("/animal", routerAnimal);
-app.use("/user", routerUser)
+
 
 const PORT = 5050;
 app.listen(PORT, () => {
