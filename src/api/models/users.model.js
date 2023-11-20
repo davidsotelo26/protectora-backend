@@ -1,21 +1,17 @@
-const mysql = require("mysql");
+const mongoose = require("mongoose");
+const Schema = mongoose.Schema;
 
-const connection = mysql.createConnection({
-    host: process.env.DBHOST,
-    user: process.env.DBUSER,
-    password: process.env.DBPASSWORD,
-    database: process.env.DATABASE,
+const userSchema = new Schema({
+    name: {type: String, required: true},
+    email: { type: String, required: true },
+    password: { type: String, required: true },
+    role: { type: String, default: "user", enum: ["admin", "user", "company"] },
+},
+{
+    collection: "user", timestamps: true
 });
 
-connection.connect((err) => {
-    if (err) throw err;
-    console.log('Connected!');
-});
+const User = mongoose.model("user", userSchema)
+module.exports = User;
 
-connection.query(function (err, results, fields) {
-    if (err) {
-        console.log(err.message);
-    }
-});
 
-connection.end();
