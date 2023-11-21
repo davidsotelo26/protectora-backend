@@ -4,8 +4,6 @@ const Schema = mongoose.Schema;
 
 
 const animalSchema = new Schema({
-    
-    IDEntity: { type: String, require: true },
     Cif: { type: String, require: true },
     name: { type: String, require: true },
     phone: { type: String, require: true },
