@@ -4,7 +4,6 @@ const Schema = mongoose.Schema;
 
 const animalsSchema = new Schema(
     {
-        animalID: { type: Number, required: true },
         name: { type: String, required: true },
         city: { type: String, required: true },
         species: { type: String, required: true },
