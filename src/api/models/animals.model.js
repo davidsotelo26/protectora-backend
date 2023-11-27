@@ -4,7 +4,6 @@ const Schema = mongoose.Schema;
 
 const animalsSchema = new Schema(
     {
-        animalID: { type: Number, required: true },
         name: { type: String, required: true },
         city: { type: String, required: true },
         species: { type: String, required: true },
@@ -18,7 +17,7 @@ const animalsSchema = new Schema(
         vaccinated: { type: Boolean, required: true },
         dewormed: { type: Boolean, required: true },
         sterilized: { type: Boolean, required: true },
-        indentified: { type: Boolean, required: true },
+        identified: { type: Boolean, required: true },
         microchip: { type: Boolean, required: true },
         adoptionRequirements: { type: String, required: true },
         rate: { type: Number, required: true },
